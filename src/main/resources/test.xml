@@ -133,4 +133,138 @@
             </Unit>
         </Param>
     </Product>
+    <Product>
+        <ID>70411</ID>
+        <EAN>5024982650737</EAN>
+        <PartNumber>27429</PartNumber>
+        <Name>Glacier Gaiter</Name>
+        <Name2>
+            <Title>Návleky Mountain Equipment Glacier Gaiter | Black M</Title>
+            <Language>cs</Language>
+        </Name2>
+        <ITEMGROUP_ID>70410</ITEMGROUP_ID>
+        <Manufacturer>Mountain Equipment</Manufacturer>
+        <Supplier>Summit Trade Distribution</Supplier>
+        <CountryOfOrigin>not available</CountryOfOrigin>
+        <MeasureUnit>ks</MeasureUnit>
+        <RecommendedRetailPriceWithVat>
+            <Price>1890</Price>
+            <Currency>CZK</Currency>
+        </RecommendedRetailPriceWithVat>
+        <RecommendedRetailPriceWithVat>
+            <Price>69,95</Price>
+            <Currency>EUR</Currency>
+        </RecommendedRetailPriceWithVat>
+        <VAT>
+            <Rate>Základní sazba</Rate>
+            <Country>CZ</Country>
+        </VAT>
+        <VAT>
+            <Rate>Základní sazba</Rate>
+            <Country>SK</Country>
+        </VAT>
+        <ShortDescription>&lt;p&gt;Klasické návleky pro velké boty ušité z třívrstvé nepromokavé membrány GORE-TEX&lt;sup&gt;®&lt;/sup&gt;. Ochrání boty a nohavice před vodou, sněhem, bahnem nebo protrhnutím kalhot mačkami.&lt;/p&gt;</ShortDescription>
+        <LargeDescription>&lt;p&gt;Klasické návleky, širšího střihu pro velké boty ušité &lt;strong&gt;z třívrstvé nepromokavé membrány GORE-TEX&lt;sup&gt;®&lt;/sup&gt;&lt;/strong&gt;, aby byla zabezpečena co nejvyšší prodyšnost. Ochrání boty a nohavice před vodou, sněhem, bahnem nebo protrhnutím kalhot mačkami.&lt;/p&gt;
+            &lt;ul&gt;&lt;li&gt;Třívrstvá membrána GORE-TEX® 75 D.&lt;/li&gt;&lt;li&gt;Zesílené spodní partie nylonem 500 D.&lt;/li&gt;&lt;li&gt;Úzký střih pro bezpečnější chůzi v mačkách.&lt;/li&gt;&lt;li&gt;Dimenzováno pro velkou obuv.&lt;/li&gt;&lt;li&gt;Zapínání na suchý zip s pojistným patentem.&lt;/li&gt;&lt;li&gt;Nastavení šířky návleku na horním lemu.&lt;/li&gt;&lt;li&gt;&lt;a name="_heading=h.gjdgxs"&gt;&lt;/a&gt;Pomocný pásek pro uchycení pod botou.&lt;/li&gt;&lt;/ul&gt;
+            &lt;h2&gt;Odolná třívrstvá membrána GORE-TEX&lt;sup&gt;®&lt;/sup&gt; 75D&lt;/h2&gt;
+            &lt;p&gt;Membrána GORE-TEX&lt;sup&gt;®&lt;/sup&gt; 75 D je dostatečnou &lt;strong&gt;zárukou vysoké prodyšnosti, nepromokavosti a odolnosti&lt;/strong&gt;. Dobře chrání i v opravdu &lt;strong&gt;náročných podmínkách&lt;/strong&gt;. Jedná se o GORE-TEX&lt;sup&gt;®&lt;/sup&gt; membránu porézního typu. Jeden takový pór je dvacet tisíc krát menší než molekula vody, a proto propustí pouze molekuly vodní páry. Návleky jsou tak prodyšné a zároveň kompletně odolné vůči vodě.&lt;/p&gt;
+            &lt;h2&gt;Dvouletá záruka bez kompromisů&lt;/h2&gt;
+            &lt;p&gt;Na vybavení je potřeba &lt;strong&gt;se vždy spolehnout&lt;/strong&gt;. Pokud tedy je něco v nepořádku, tak máš &lt;strong&gt;nekompromisní dvouletou záruku&lt;/strong&gt;. Objevíš-li výrobní vadu, zboží nám zašli a my ho předáme přímo do servisního střediska v Mnichově, které se postará o zbytek.&lt;/p&gt;
+            &lt;h2&gt;&lt;a name="_heading=h.nl9nw3pk3hkl"&gt;&lt;/a&gt;Pozáruční servis&lt;/h2&gt;
+            &lt;p&gt;Pokud vybavení poškodíš, servisní středisko v Mnichově to &lt;strong&gt;opraví&lt;/strong&gt;. Stačí nám ho zaslat a my se o vše postaráme.&lt;/p&gt;</LargeDescription>
+        <Documents>
+            <ImageLink>https://www.summitacademy.cz/Files/ProductDocuments/7143016d-3d77-411d-9d91-7c894c5fa37e.jpg</ImageLink>
+            <AdditionalImageLink>https://www.summitacademy.cz/Files/ProductDocuments/61e8a184-fb2f-49cb-be74-d82b1d2d1b15.jpg</AdditionalImageLink>
+            <AdditionalImageLink>https://www.summitacademy.cz/Files/ProductDocuments/d58e16b3-b0d7-4e2b-839e-880593e0462b.jpg</AdditionalImageLink>
+            <AdditionalImageLink>https://www.summitacademy.cz/Files/ProductDocuments/e328f47d-3d1e-401f-a77e-cbb522d233a1.jpg</AdditionalImageLink>
+            <Document>
+                <Name>
+                </Name>
+                <Link>
+                </Link>
+            </Document>
+            <Certificate>
+                <Link>
+                </Link>
+                <Description>
+                </Description>
+                <ImageLink>
+                </ImageLink>
+            </Certificate>
+            <Video>
+            </Video>
+        </Documents>
+        <Availability>
+            <internal>5</internal>
+            <external>0</external>
+            <manufacturer>5</manufacturer>
+        </Availability>
+        <Guarantee>not available</Guarantee>
+        <GuaranteeType>not available</GuaranteeType>
+        <Conditions>
+            <IsNew>false</IsNew>
+            <IsSale>false</IsSale>
+            <IsOutlet>false</IsOutlet>
+        </Conditions>
+        <Season>not available</Season>
+        <Param>
+            <Name>Barva</Name>
+            <Value>Black</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Hrubost vláken</Name>
+            <Value>500</Value>
+            <Unit>D</Unit>
+        </Param>
+        <Param>
+            <Name>Materiál</Name>
+            <Value>Polyester</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Membrána</Name>
+            <Value>3L GGORE-TEX® 75D</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Počet vrstev membrány</Name>
+            <Value>3</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Typ membrány</Name>
+            <Value>porézní</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Typ zapínání</Name>
+            <Value>prekrytý prední zip</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Velikost</Name>
+            <Value>M</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Výrobce membrány</Name>
+            <Value>GORE</Value>
+            <Unit>
+            </Unit>
+        </Param>
+        <Param>
+            <Name>Výrobci</Name>
+            <Value>Mountain Equipment</Value>
+            <Unit>
+            </Unit>
+        </Param>
+    </Product>
     </B2B>

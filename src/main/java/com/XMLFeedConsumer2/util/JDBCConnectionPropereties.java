@@ -3,7 +3,8 @@ package com.XMLFeedConsumer2.util;
 import com.XMLFeedConsumer2.xml.INIReader;
 
 public interface JDBCConnectionPropereties {
-    INIReader iniReader = INIReader.getINIReader();
+    INIReader iniReader = new INIReader();
+
     String driver = iniReader.getIniData().get(3);
     String url = iniReader.getIniData().get(4);
     String pass = iniReader.getIniData().get(2);
