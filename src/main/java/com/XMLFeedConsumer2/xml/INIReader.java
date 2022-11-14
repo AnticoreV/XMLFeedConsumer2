@@ -1,7 +1,9 @@
 package com.XMLFeedConsumer2.xml;
 
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,24 +12,13 @@ import java.util.List;
 
 
 //Read data from file
+@Component
+@Scope("singleton")
 public class INIReader {
-    private static INIReader iniReader;
-    private INIReader(){
-    }
-
-    //Get a path to config file and create a singleton object
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    public static INIReader getINIReader(){
-        if(iniReader == null){iniReader = new INIReader();}
-        return iniReader;
-    }
-
     private List <StringBuilder> data = new ArrayList<>();
     private List <String> list_data = new ArrayList<>();
+
+    @Value("${path.config}")
     private String path;
 
     //Get data from config file
