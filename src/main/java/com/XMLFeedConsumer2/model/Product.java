@@ -13,9 +13,7 @@ import javax.persistence.*;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private int product_id;
     private String name;
-//    @OneToOne(fetch = FetchType.LAZY)
-//    private Description description;
 }
