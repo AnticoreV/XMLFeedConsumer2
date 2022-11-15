@@ -1,15 +1,14 @@
 package com.XMLFeedConsumer2.xml;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import java.io.*;
 import java.net.URL;
 
 public class FileSaver {
-    private final String path;
-
     //save downloaded file on path
-    public FileSaver(String path) {
-        this.path = path;
-    }
+    @Value("${path.xml}")
+    private String path;
 
     //download file from url
     public void download(String url){

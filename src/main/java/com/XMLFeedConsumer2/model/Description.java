@@ -15,9 +15,8 @@ public class Description {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 4095)
-    private String info;
-//    @OneToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "id")
-//    private Product product;
+    @Column(length = 16383)
+    private String other_info;
+    @Column(length = 511)
+    private String param;
 }

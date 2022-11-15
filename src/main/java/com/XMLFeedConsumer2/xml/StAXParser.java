@@ -45,7 +45,10 @@ public class StAXParser {
 
             List<String> product_names = new ArrayList<>();
             List<String> info = new ArrayList<>();
+            List<String> countries = new ArrayList<>();
+            List<String> param = new ArrayList<>();
             int iter = 0;
+            int param_iter = 0;
             Description description = new Description();
             Product product = new Product();
 
@@ -64,11 +67,21 @@ public class StAXParser {
                         if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
                             product_names.add(xmlStreamReader.getText());
                         }
-                    } else {
+                    } else if (xmlStreamReader.getLocalName().equals("PartNumber")) {
+                        xmlStreamReader.next();
+                        product.setPart_number(xmlStreamReader.getText());
+                    } else if (xmlStreamReader.getLocalName().equals("Country")) {
                         xmlStreamReader.next();
                         if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
-                            info.add(xmlStreamReader.getText());
+                            countries.add(xmlStreamReader.getText());
                         }
+                    } else if (xmlStreamReader.getLocalName().equals("Param")) {
+                        param_iter++;
+                    }
+                }else if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
+                    if(param_iter % 2 != 0){
+                        param.add(xmlStreamReader.getText());
+                        param_iter = 0;
                     }
                 }
                 else if(xmlStreamReader.isEndElement()){
@@ -78,12 +91,16 @@ public class StAXParser {
                 }
 
                 if((iter%2)==0 && iter!=0){
-                    description.setInfo(info.toString());
+                    description.setOther_info(info.toString());
+                    description.setParam(param.toString());
                     product.setNames(product_names.toString());
+                    product.setCountries(countries.toString());
                     productService.save(product);
                     descriptionService.save(description);
+                    countries = new ArrayList<>();
                     product_names = new ArrayList<>();
                     info = new ArrayList<>();
+                    param = new ArrayList<>();
                     product = new Product();
                     description = new Description();
                     iter = 0;
