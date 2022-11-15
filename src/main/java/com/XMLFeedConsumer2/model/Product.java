@@ -17,6 +17,6 @@ public class Product {
     private Integer product_id;
     @Column(length = 1023)
     private String names;
-    @OneToOne(mappedBy = "product",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Description description;
+//    @OneToOne(mappedBy = "product",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Description description;
 }

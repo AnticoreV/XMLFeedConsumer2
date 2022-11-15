@@ -2,6 +2,7 @@ package com.XMLFeedConsumer2.xml;
 
 import com.XMLFeedConsumer2.model.Description;
 import com.XMLFeedConsumer2.model.Product;
+import com.XMLFeedConsumer2.service.DescriptionServiceImpl;
 import com.XMLFeedConsumer2.service.ProductServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,8 +23,11 @@ import java.util.List;
 public class StAXParser {
     private static final Logger log = LoggerFactory.getLogger(StAXParser.class);
     private final ProductServiceImpl productService;
-    public StAXParser(ProductServiceImpl productService) {
+    private final DescriptionServiceImpl descriptionService;
+
+    public StAXParser(ProductServiceImpl productService, DescriptionServiceImpl descriptionService) {
         this.productService = productService;
+        this.descriptionService = descriptionService;
     }
 
     @Value("${path.xml}")
@@ -40,6 +44,7 @@ public class StAXParser {
 
 
             List<String> product_names = new ArrayList<>();
+            List<String> info = new ArrayList<>();
             int iter = 0;
             Description description = new Description();
             Product product = new Product();
@@ -59,9 +64,12 @@ public class StAXParser {
                         if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
                             product_names.add(xmlStreamReader.getText());
                         }
+                    } else {
+                        xmlStreamReader.next();
+                        if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
+                            info.add(xmlStreamReader.getText());
+                        }
                     }
-                }
-                else if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0) {
                 }
                 else if(xmlStreamReader.isEndElement()){
                     if(xmlStreamReader.getLocalName().equals("Product")){
@@ -70,14 +78,17 @@ public class StAXParser {
                 }
 
                 if((iter%2)==0 && iter!=0){
+                    description.setInfo(info.toString());
                     product.setNames(product_names.toString());
                     productService.save(product);
+                    descriptionService.save(description);
+                    product_names = new ArrayList<>();
+                    info = new ArrayList<>();
                     product = new Product();
+                    description = new Description();
                     iter = 0;
                 }
             }
-            System.out.println(product_names.toString());
-
         } catch (XMLStreamException | FileNotFoundException e) {
             throw new RuntimeException("Runtime Exception " + e);
         }
