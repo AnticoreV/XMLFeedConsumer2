@@ -10,5 +10,5 @@ public interface ProductService {
     Optional<Product> findById(Long id);
     Product save(Product product);
     Product update(Product product);
-    Product findByProductId(Long id);
+    String findByProductId(Long id);
 }

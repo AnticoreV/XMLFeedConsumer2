@@ -3,6 +3,7 @@ package com.XMLFeedConsumer2.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Setter
 @Table
 @Entity
+@ToString
 public class Description {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
