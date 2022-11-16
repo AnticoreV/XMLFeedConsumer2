@@ -104,6 +104,7 @@ public class StAXParser {
                     product = new Product();
                     description = new Description();
                     iter = 0;
+                    log.info("Product was added");
                 }
             }
         } catch (XMLStreamException | FileNotFoundException e) {

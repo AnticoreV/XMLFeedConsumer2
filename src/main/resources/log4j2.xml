@@ -6,7 +6,7 @@
 <!--            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>-->
 <!--        </Console>-->
 
-        <File name="LogToFile" fileName="/Users/ivansapronov/Desktop/XMLFeedConsumer/src/main/resources/logs.txt">
+        <File name="LogToFile" fileName="/Users/ivansapronov/Desktop/XMLFeedConsumer2/src/main/resources/logs.txt">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
