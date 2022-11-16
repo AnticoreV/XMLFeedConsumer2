@@ -19,6 +19,8 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//Refactoring in process
 @Service
 public class StAXParser {
     private static final Logger log = LoggerFactory.getLogger(StAXParser.class);
@@ -89,7 +91,10 @@ public class StAXParser {
                         iter++;
                     }
                 }
-
+                //Saving product with description into database
+                //In XML we have pair tags, if we hit the second tag "Product" =>
+                // => iter == 2, than we save an object and create new dataset
+                //for the next product
                 if((iter%2)==0 && iter!=0){
                     description.setOther_info(info.toString());
                     description.setParam(param.toString());
@@ -97,6 +102,7 @@ public class StAXParser {
                     product.setCountries(countries.toString());
                     productService.save(product);
                     descriptionService.save(description);
+                    log.info("Product was added " + product.getProduct_id());
                     countries = new ArrayList<>();
                     product_names = new ArrayList<>();
                     info = new ArrayList<>();
@@ -104,7 +110,6 @@ public class StAXParser {
                     product = new Product();
                     description = new Description();
                     iter = 0;
-                    log.info("Product was added");
                 }
             }
         } catch (XMLStreamException | FileNotFoundException e) {
