@@ -1,14 +1,11 @@
 package com.XMLFeedConsumer2.controller;
 
-import com.XMLFeedConsumer2.model.Product;
 import com.XMLFeedConsumer2.service.DescriptionServiceImpl;
 import com.XMLFeedConsumer2.service.ProductServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")

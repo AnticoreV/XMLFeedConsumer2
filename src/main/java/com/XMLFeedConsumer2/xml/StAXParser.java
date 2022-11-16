@@ -44,6 +44,8 @@ public class StAXParser {
             XMLStreamReader xmlStreamReader =
                     xmlInputFactory.createXMLStreamReader(fileReader);
 
+            //test
+
 
             List<String> product_names = new ArrayList<>();
             List<String> info = new ArrayList<>();
@@ -59,25 +61,17 @@ public class StAXParser {
                 xmlStreamReader.next();
 
                 if(xmlStreamReader.isStartElement()){
-                    if(xmlStreamReader.getLocalName().equals("Product")){
+                    if(isElement(xmlStreamReader, "Product")){
                         iter++;
-                    } else if (xmlStreamReader.getLocalName().equals("ID")) {
-                        xmlStreamReader.next();
-                        product.setProduct_id(Integer.parseInt(xmlStreamReader.getText()));
-                    } else if (xmlStreamReader.getLocalName().equals("Name")) {
-                        xmlStreamReader.next();
-                        if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
-                            product_names.add(xmlStreamReader.getText());
-                        }
-                    } else if (xmlStreamReader.getLocalName().equals("PartNumber")) {
-                        xmlStreamReader.next();
-                        product.setPart_number(xmlStreamReader.getText());
-                    } else if (xmlStreamReader.getLocalName().equals("Country")) {
-                        xmlStreamReader.next();
-                        if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
-                            countries.add(xmlStreamReader.getText());
-                        }
-                    } else if (xmlStreamReader.getLocalName().equals("Param")) {
+                    } else if (isElement(xmlStreamReader, "ID")) {
+                        idElementProcessing(xmlStreamReader, product);
+                    } else if (isElement(xmlStreamReader, "Name")) {
+                        nameElementProcessing(xmlStreamReader, product_names);
+                    } else if (isElement(xmlStreamReader, "PartNumber")) {
+                        partNumberElementProcessing(xmlStreamReader, product);
+                    } else if (isElement(xmlStreamReader, "Country")) {
+                        countryElementProcessing(xmlStreamReader, countries);
+                    } else if (isElement(xmlStreamReader, "Param")) {
                         param_iter++;
                     }
                 }else if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
@@ -87,7 +81,7 @@ public class StAXParser {
                     }
                 }
                 else if(xmlStreamReader.isEndElement()){
-                    if(xmlStreamReader.getLocalName().equals("Product")){
+                    if(isElement(xmlStreamReader, "Product")){
                         iter++;
                     }
                 }
@@ -115,5 +109,33 @@ public class StAXParser {
         } catch (XMLStreamException | FileNotFoundException e) {
             throw new RuntimeException("Runtime Exception " + e);
         }
+    }
+
+    private void idElementProcessing(XMLStreamReader xmlStreamReader, Product product) throws XMLStreamException {
+        xmlStreamReader.next();
+        product.setProduct_id(Integer.parseInt(xmlStreamReader.getText()));
+    }
+
+    private void nameElementProcessing(XMLStreamReader xmlStreamReader, List<String> product_names) throws XMLStreamException {
+        xmlStreamReader.next();
+        if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
+            product_names.add(xmlStreamReader.getText());
+        }
+    }
+
+    private void partNumberElementProcessing(XMLStreamReader xmlStreamReader, Product product) throws XMLStreamException {
+        xmlStreamReader.next();
+        product.setPart_number(xmlStreamReader.getText());
+    }
+
+    private void countryElementProcessing(XMLStreamReader xmlStreamReader, List<String> countries) throws XMLStreamException {
+        xmlStreamReader.next();
+        if (xmlStreamReader.hasText() && xmlStreamReader.getText().trim().length() > 0){
+            countries.add(xmlStreamReader.getText());
+        }
+    }
+
+    private boolean isElement(XMLStreamReader xmlStreamReader, String Product) {
+        return xmlStreamReader.getLocalName().equals(Product);
     }
 }
