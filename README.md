@@ -26,3 +26,5 @@ spring-boot-starter-test<br>
 postgresql<br>
 lombok<br>
 spring-boot-maven-plugin<br>
+log4j-api<br>
+slf4j-api<br>
